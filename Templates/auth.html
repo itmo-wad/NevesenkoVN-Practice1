@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Face/b/ook (HW 2)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="{{fav}}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{styleCss}}">
+</head>
+<body>
+<div class="main">
+	{% if message  %}
+	    <div class="alert alert-secondary" role="alert">
+	        <p>{{ message }}</p>
+	    </div>
+	{% endif %}
+
+	<nav>
+		<a href="secret"> My page </a> | <a href="signup"> Sign up </a>
+	</nav>
+	<header>
+		<h2> Login page </h2>
+	</header>
+	<form action="" method="post" class="flex-auth">
+	    <label class="flex-auth" for="uname"><b>Username</b></label>
+	    <input class="flex-auth" type="text" placeholder="Enter Username" name="userName" required>
+
+	    <label class="flex-auth" for="psw"><b>Password</b></label>
+	    <input class="flex-auth" type="password" placeholder="Enter Password" name="password" required>
+	    <div>
+	    	<button class="buttonCls" type="submit">Login</button>
+	    </div>
+	</form>
+</div>
+</body>
+</html>

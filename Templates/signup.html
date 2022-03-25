@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Practice 1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="{{fav}}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{styleCss}}">
+</head>
+<body>
+<div class="main">
+
+	{% if message  %}
+	    <div class="alert alert-secondary" role="alert">
+	        <p>{{ message }}</p>
+	    </div>
+	{% endif %}
+
+	<nav>
+		<a href="secret"> My page </a> | <a href="auth"> Login </a>
+	</nav>
+	<header>
+		<h2> Register now and have fun! </h2>
+	</header>
+	<form action="" method="post" class="flex-auth">
+	    <label class="flex-auth" for="uname"><b>Username</b></label>
+	    <input class="flex-auth" name="userName" type="text" placeholder="Enter Username" required>
+
+	    <label class="flex-auth" for="psw"><b>Password</b></label>
+	    <input class="flex-auth" name="password1" type="password" placeholder="Enter Password" required>
+
+	    <label class="flex-auth" for="psw"><b>Password</b></label>
+	    <input class="flex-auth" name="password2" type="password" placeholder="Repeat Password" required>
+	    <div>
+	    	<button class="buttonCls" type="submit">Register</button>
+	    </form>
+	</div>
+</div>
+</body>
+</html>

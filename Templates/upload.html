@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Face/b/ook (HW 2)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="{{fav}}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{styleCss}}">
+</head>
+<body>
+<div class="main">
+	<h2>Upload page</h2>
+	
+	{% if message  %}
+	    <div class="alert alert-secondary" role="alert">
+	        <p>{{ message }}</p>
+	    </div>
+	{% endif %}
+
+	{% if filename  %}
+	    <img src="{{url_for('ShowImg', filename=filename)}}">
+	{% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit">
+    </form>
+</div>
+</body>
+</html>
