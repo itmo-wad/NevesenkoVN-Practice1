@@ -99,12 +99,15 @@ def uploadImg():
       filename = secure_filename(file.filename)
       file.save(os.path.join(app.config['UPLOAD_IMAGES_FOLDER'], filename))
       filepath = os.path.join(app.config['UPLOAD_IMAGES_FOLDER'], filename)
-      return render_template('upload.html', filename = filename, fav = favicon, styleCss = style)
+      return redirect("/uploaded/" + filename)
+    else:
+      flash('There is some error occured')
+      return redirect("/upload")
   return render_template('upload.html', fav = favicon, styleCss = style)
 
 @app.route("/uploaded/<filename>")
 def ShowImg(filename):
-  return redirect('static', filename='Uploaded/' + filename)
+  return redirect(url_for('static', filename = "/uploaded/" + filename))
 
 
 
